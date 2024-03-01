@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-gradient-white {
+    @apply bg-gradient-to-br from-white to-slate-200 inline-block text-transparent bg-clip-text
+  }
+
+  .button {
+    @apply px-5 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 transition-all font-semibold text-lg h-12 flex items-center justify-center
+  }
+}

@@ -1,0 +1,63 @@
+---
+---
+
+<div class="sticky top-0 bg-white/10 backdrop-blur-md border-b border-white/30">
+  <div class="max-w-content py-5 flex items-center gap-6">
+    <span class="text-sm text-slate-200">Matrículas encerram em:</span>
+
+    <div class="flex items-center gap-3 text-center">
+      <div class="flex flex-col items-center gap-0.5">
+        <strong id="days" class="font-bold text-4xl text-gradient-white">01</strong>
+        <span class="text-slate-300 text-[11px] uppercase">Dias</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <strong id="hours" class="font-bold text-4xl text-gradient-white">02</strong>
+        <span class="text-slate-300 text-[11px] uppercase">Horas</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <strong id="minutes" class="font-bold text-4xl text-gradient-white">39</strong>
+        <span class="text-slate-300 text-[11px] uppercase">Minutos</span>
+      </div>
+      <div class="flex flex-col items-center gap-0.5">
+        <strong id="seconds" class="font-bold text-4xl text-gradient-white">24</strong>
+        <span class="text-slate-300 text-[11px] uppercase">Segundos</span>
+      </div>
+    </div>
+
+    <a href="" class="ml-auto button hover:scale-105">
+      Reservar minha vaga
+    </a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const days = document.getElementById('days');
+    const hours = document.getElementById('hours');
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
+    const targetTime = new Date('2024-03-12').getTime()
+    const currTime = new Date().getTime()
+    let diff = targetTime - currTime;
+
+    const updateCountdown = () => {
+      const remainingYears = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24 / 365));
+      const remainingDays = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24 ));
+      const remainingHours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24);
+      const remainingMinutes = Math.max(Math.floor(diff / 1000 / 60) % 60);
+      const remainingSeconds = Math.max(Math.floor(diff / 1000 ) % 60);
+
+
+      !days ? null : days.innerHTML = remainingDays.toString()
+      !hours ? null : hours.innerHTML = (remainingHours < 10 ? '0' + remainingHours  : remainingHours).toString()
+      !minutes ? null : minutes.innerHTML = (remainingMinutes < 10 ? '0' + remainingMinutes : remainingMinutes).toString()
+      !seconds ? null : seconds.innerHTML = (remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds).toString()
+    }
+
+    const countdownInterval = setInterval(() => {
+      updateCountdown();
+      diff -= 1000;
+      if (diff < 0) diff = 0
+    }, 1000);
+  })
+</script>

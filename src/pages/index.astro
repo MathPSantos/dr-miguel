@@ -1,6 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Countdown from '../components/Countdown.astro';
+
+const CLIENT_ITEMS = [
+	'Para quem ainda não trabalha com estética, mas têm o desejo de empreender nessa área.',
+	'Profissionais da saúde que desejam aprender novas técnicas e abranger as áreas para impulsionar seus ganhos.',
+	'Pra quem deseja aprender de forma mais clara e descomplicada sobre microagulhamento, seus custos e ganhos e técnicas',
+	'Para quem já trabalha com estética mais tem medo ou possui preconceito sobre procedimentos faciais devido à falta de conhecimento sobre investimento e possíveis reações.',
+	'Profissionais da estética, que reconhecem que os resultados podem ser significativamente aprimorados com a incorporação de tratamentos mais específicos.',
+]
+
 ---
 
 <Layout>
@@ -21,7 +30,7 @@ import Countdown from '../components/Countdown.astro';
 					</div>
 
 					<h1 class="mt-10 uppercase font-bold text-[28px] leading-snug max-w-3xl">
-						O evento que irá te contar <strong class="font-bold text-gradient-white from-orange-400 to-orange-300 inline">os segredos dos profissionais</strong> da estética que <strong class="font-bold text-gradient-white from-orange-400 to-orange-300 inline">lucram 7 mil reais por mês</strong> com microagulhamento.
+						O evento que irá te contar <strong class="font-bold text-gradient-orange inline">os segredos dos profissionais</strong> da estética que <strong class="font-bold text-gradient-orange inline">lucram 7 mil reais por mês</strong> com microagulhamento.
 					</h1>
 					
 					<p class="mt-4 text-lg font-medium max-w-sm">Descubra como conseguir <strong class="font-medium text-orange-400">ganhar um salário de servidor público</strong> com estética</p>
@@ -62,33 +71,38 @@ import Countdown from '../components/Countdown.astro';
 
 		<!-- Sobre-->
 		<section>
-			<div class="max-w-content py-20">
-				<h2>Ter lucros altos com a estética é possível para pessoas comuns, como eu e você…</h2>
+			<div class="max-w-content max-w-screen-md text-center py-24">
+				<h2 class="font-semibold leading-snug text-3xl tracking-tight">Ter lucros altos com a estética é possível para pessoas comuns, como eu e você…</h2>
 
-				<div>
+				<div class="mt-10 space-y-3 text-slate-100 text-lg">
 					<p>Muitas vezes, nos deparamos com a sensação de estar aprisionadas em nossa carreira, com uma oferta limitada de serviços e quase nenhum cliente à vista.</p>
+
 					<p>Parece que nosso trabalho não é verdadeiramente apreciado. A angústia de se mover incessantemente, mas sem progredir, de lutar para preencher a agenda e oferecer o melhor para eles.</p>
+					
 					<p>A ânsia por ser notada e alcançar o sucesso, um desejo compartilhado por poucos, é algo com o qual me identifico plenamente.</p>
+					
 					<p>Foi por esse motivo que decidi realizar a aula: A Jornada dos 7K. Meu objetivo é te mostrar exatamente quais são os passos que te colocam no caminho de se tornar um profissional completo, proporcionar a você a gratificação de se destacar em sua área, de se tornar uma autoridade, de ter uma agenda lotada de clientes que reconhecem e valorizam seu trabalho.</p>
-					<p>Estou aqui para te guiar na <strong>realização DEFINITIVA</strong> de SEU sonho!</p>
+
+					<p>Estou aqui para te guiar na <strong class="text-gradient-orange">realização DEFINITIVA</strong> de SEU sonho!</p>
 				</div>
 			</div>
 		</section>
 		
 		<!-- Para quem -->
 		<section>
-			<div class="max-w-content py-20">
-				<h2>Para quem é a <b class="text-emerald-700">Jornada dos 7K</b>?</h2>
+			<div class="max-w-content flex flex-col items-center text-center justify-center py-24">
+				<h2 class="font-semibold leading-snug text-3xl tracking-tight">Para quem é a <b class="text-gradient-orange inline">Jornada dos 7K</b>?</h2>
 
-				<ul>
-					<li>Para quem ainda não trabalha com estética, mas têm o desejo de empreender nessa área.</li>
-					<li>Para quem já trabalha com estética mais tem medo ou possui preconceito sobre procedimentos faciais devido à falta de conhecimento sobre investimento e possíveis reações.</li>
-					<li>Profissionais da saúde que desejam aprender novas técnicas e abranger as áreas para impulsionar seus ganhos.</li>
-					<li>Profissionais da estética, que reconhecem que os resultados podem ser significativamente aprimorados com a incorporação de tratamentos mais específicos.</li>
-					<li>Pra quem deseja aprender de forma mais clara e descomplicada sobre microagulhamento, seus custos e ganhos e técnicas</li>
+				<ul class="flex flex-wrap gap-y-8 gap-x-6 justify-center mt-10">
+					{CLIENT_ITEMS.map((item, index) => (
+						<li class="px-1 py-6 flex flex-col w-full max-w-[378px] gap-4 items-center text-pretty">
+							<span class="size-10 rounded-lg bg-orange-500 font-extrabold text-xl flex items-center justify-center border border-white/25">{index + 1}</span>
+							{item}
+						</li>
+					))}
 				</ul>
 
-				<a href="" class="uppercase">
+				<a href="" class="button w-fit mt-8">
 					Reservar minha vaga
 				</a>
 			</div>
@@ -96,32 +110,32 @@ import Countdown from '../components/Countdown.astro';
 
 		<!-- O que vou aprender -->
 		<section>
-			<div class="max-w-content py-20">
-				<h2>Nessa aula você:</h2>
+			<div class="max-w-content py-24">
+				<h2 class="font-semibold leading-snug text-3xl tracking-tight">Nessa aula você:</h2>
 
-				<div class="grid sm:grid-cols-2 md:gridcols-4">
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+				<div class="mt-10 grid sm:grid-cols-2 gap-9">
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai descobrir como aumentar seu faturamento com novas técnicas estéticas </p>
 					</div>
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai aprender como virar a chave e desbloquear os primeiros passos para os 7K</p>
 					</div>
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai elevar a percepção de valor dos seus serviços.</p>
 					</div>
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai aprender como criar a rota para os primeiros 7 mil,</p>
 					</div>
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai descobrir por quê algumas pessoas não conseguem desbloquear os ganhos de 7 mi</p>
 					</div>
-					<div>
-						<div class="size-6 rounded-md bg-black/20"></div>
+					<div class="flex items-center gap-4">
+						<div class="size-14 flex items-center justify-center text-white rounded-md bg-white/20 shrink-0"></div>
 						<p>Vai descobrir o segredo para ter sua agenda lotada, sem ficar desesperada com captação de clientes  sem técnicas mirabolantes e sem anúncio</p>
 					</div>
 				</div>
@@ -130,19 +144,21 @@ import Countdown from '../components/Countdown.astro';
 
 		<!-- Sobre o prof -->
 		<section>
-			<div class="max-w-content py-20">
+			<div class="max-w-content py-20 flex flex-col sm:flex-row gap-6">
 				<!-- Imagem Miguel -->
 				<div></div>
 				
-				<div>
-					<h2>Conheça DR MIGUEL</h2>
+				<div class="max-w-2xl ml-auto text-lg">
+					<h2 class="font-semibold leading-snug text-3xl tracking-tight">Conheça DR MIGUEL</h2>
 
-					<p>Dr. Miguel 38 anos, Pós graduado em Fisioterapia Dermatofuncional. Professor do SENAC há 11 anos.</p>
-					<p>Sou formado em fisioterapia, me especializei em fisioterapia dermatofuncional e acumulo mais de 9 anos ensinando pessoas comuns a se tornarem excelentes profissionais na área da estética.</p>
-					<p>Antes mesmo de empreender e ter meu próprio consultório já lecionava e capacitava pessoas para se tornarem esteticista.</p>
-					<p>Tenho certeza que essa bagagem da sala de aula e por ter passado anos orientando profissionais no início de suas carreiras, sei quais são as principais dificuldades, dores e sei exatamente como ultrapassá-las para desbloquear uma renda de pelo menos 7 mil.</p>
-
-					<a href="" class="uppercase">
+					<div class="mt-10 space-y-3 text-slate-100 text-lg">
+						<p>Dr. Miguel 38 anos, Pós graduado em Fisioterapia Dermatofuncional. Professor do SENAC há 11 anos.</p>
+						<p>Sou formado em fisioterapia, me especializei em fisioterapia dermatofuncional e acumulo mais de 9 anos ensinando pessoas comuns a se tornarem excelentes profissionais na área da estética.</p>
+						<p>Antes mesmo de empreender e ter meu próprio consultório já lecionava e capacitava pessoas para se tornarem esteticista.</p>
+						<p>Tenho certeza que essa bagagem da sala de aula e por ter passado anos orientando profissionais no início de suas carreiras, sei quais são as principais dificuldades, dores e sei exatamente como ultrapassá-las para desbloquear uma renda de pelo menos 7 mil.</p>
+					</div>
+						
+					<a href="" class="button mt-12">
 						FINALIZAR INSCRIÇÃO
 					</a>
 				</div>

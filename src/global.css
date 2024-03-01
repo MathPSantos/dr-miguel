@@ -7,7 +7,11 @@
     @apply bg-gradient-to-br from-white to-slate-200 inline-block text-transparent bg-clip-text
   }
 
+  .text-gradient-orange {
+    @apply text-gradient-white from-orange-400 to-orange-300
+  }
+
   .button {
-    @apply px-5 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 transition-all font-semibold text-lg h-12 flex items-center justify-center
+    @apply uppercase px-5 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 transition-all font-semibold text-lg h-12 flex items-center justify-center border border-white/25
   }
 }
